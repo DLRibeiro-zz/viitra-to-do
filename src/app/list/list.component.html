@@ -1,0 +1,10 @@
+ <div class="uk-grid uk-grid-collapse">
+        <div class="list-empty uk-width-1-1" *ngIf="items?.length === 0">
+          List is empty
+        </div>
+        <div class="list-items uk-width-1-1">
+          <div class="item uk-width-1-1" *ngFor="let item of items; let i = index;">
+            Item {{ i }}
+          </div>
+        </div>
+      </div>

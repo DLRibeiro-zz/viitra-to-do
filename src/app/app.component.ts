@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TaskService } from "app/Service/Task.service";
 
 @Component({
   selector: 'app-root',
@@ -9,13 +10,18 @@ export class AppComponent {
   
   public items: Array<string>;
 
-  constructor () {
+  constructor (private taskService : TaskService) {
 
     this.items = [];
+    // for (let i = 0; i < 21; i++) {
+    //   this.items.push(`Item ${i}`);
+    // }
+    taskService.fetchTasks(0);
+    this.items = taskService.getAllTasks();
+  }
 
-    for (let i = 0; i < 21; i++) {
-      this.items.push(`Item ${i}`);
-    }
+  addTask(){
+    this.taskService.addTask({Task_text : `Item ${this.items.length}`, codigo : this.items.length});
   }
   
 }

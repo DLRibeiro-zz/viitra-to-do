@@ -10,7 +10,7 @@
     <div class="container-box uk-width-1-1">
 
       <!-- Add button -->
-      <button class="add-button uk-button uk-width-1-1">
+      <button class="add-button uk-button uk-width-1-1" (click)="addTask()">
         <i class="uk-icon-plus"></i>
       </button>
       
@@ -22,7 +22,7 @@
       </div>
 
       <!-- List Items -->
-      <div class="uk-grid uk-grid-collapse">
+      <!-- <div class="uk-grid uk-grid-collapse">
         <div class="list-empty uk-width-1-1" *ngIf="items?.length === 0">
           List is empty
         </div>
@@ -31,7 +31,10 @@
             Item {{ i }}
           </div>
         </div>
-      </div> 
+      </div>  -->
+      <app-list [tasks] = "this.items">
+
+      </app-list>
 
     </div>
 
